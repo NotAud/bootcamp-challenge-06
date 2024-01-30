@@ -211,7 +211,7 @@ async function requestCityWeather(lat, lon) {
 // We use our city name here to get the coords then do another request for the weather
 // We assume our first result is the most valid so we also limit to 1 result
 async function requestCityCoords(cityName) {
-  const BASE_URL = "http://api.openweathermap.org/geo/1.0/direct";
+  const BASE_URL = "https://api.openweathermap.org/geo/1.0/direct";
   const requestUrl = `${BASE_URL}?q=${cityName}&limit=1`;
   const response = await buildRequest(requestUrl);
   return response;
@@ -229,5 +229,5 @@ async function buildRequest(requestUrl) {
 
 // Abtract our the process of building the url for each place a weather icon is needed
 function getImageUrl(icon) {
-  return `http://openweathermap.org/img/wn/${icon}.png`;
+  return `https://openweathermap.org/img/wn/${icon}.png`;
 }

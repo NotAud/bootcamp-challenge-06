@@ -1,4 +1,4 @@
-# 05 Server-Side Apis
+# 06 Server-Side Apis
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ Shows the current and future 5-Day forecasted weather for a given city. You can 
 
 ## Deployed Page
 
-[Live Deployment](https://notaud.github.io/bootcamp-challenge-6/)
+[Live Deployment](https://notaud.github.io/bootcamp-challenge-06/)
 
 ![Example Image of Page](https://imgur.com/p1DG7i1.png)
 
