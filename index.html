@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <!-- Link tailwind from the CDN for our UI library -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Apply our styles -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- Apply tailwind classes for some elements -->
+    <style type="text/tailwindcss">
+        @layer base {
+            h1 {
+                @apply text-[32px];
+            }
+
+            h2 {
+                @apply text-[24px];
+            }
+
+            h3 {
+                @apply text-[20px];
+            }
+
+            button {
+                @apply w-full py-[6px] rounded-md bg-gray-300 transition duration-300 ease-in-out text-[18px];
+            }
+
+            #search-history > button:hover {
+                @apply bg-gray-400;
+            }
+        }
+      </style>
+
+    <!-- Link Jquery and DayJS libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"
+    ></script>   
+      
+    <!-- Link to our JS -->
+    <script src="./assets/scripts/main.js"></script>
+</head>
+<body class="flex flex-col gap-y-4">
+    <header class="flex justify-center items-center py-2 bg-[#2a2e96]">
+        <h1 class="text-white font-bold">Weather Dashboard</h1>
+    </header>
+    <main class="flex gap-x-6 px-5">
+        <section id="search-container" class="flex flex-col flex-grow gap-y-4 max-w-[300px]">
+            <div class="flex flex-col gap-y-3">
+                <h2 class="font-bold">Search for a City:</h2>
+                <input id="search-input" type="text" placeholder="City Name" class="border-2 border-gray-300 rounded-md pl-1 py-1">
+                <button id="search-button" class="bg-blue-500 text-white hover:bg-blue-600">Search</button>
+            </div>
+            <hr class="border-t-2 border-gray-300" />
+            <div id="search-history" class="flex flex-col gap-y-4">
+                <!-- Dynamically inject search history buttons from local storage -->
+            </div>
+        </section>
+        <section class="flex flex-col gap-y-4 flex-grow max-w-[80%]">
+            <div class="flex flex-col gap-y-4 border border-black px-2 pt-2 pb-6">
+                <div class="flex gap-x-2 font-bold">
+                    <h2 id="city-name"></h2>
+                    <h2 id="current-date"></h2>
+                    <img id="current-weather-indicator" class="w-[36px] h-[36px]" ></img>
+                </div>
+                <p>Temperature: <span id="current-temperature"></span></p>
+                <p>Wind Speed: <span id="current-windspeed"></span></p>
+                <p>Humidity: <span id="current-humidity"></span></p>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="font-bold">5-Day Forecast:</h3>
+                <div id="forecast-container" class="flex gap-x-5">
+                    <!-- Dynamically create forecast cards -->
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
